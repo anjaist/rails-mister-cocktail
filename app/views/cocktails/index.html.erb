@@ -5,7 +5,13 @@
       <% count += 1 %>
       <div class="col-xs-12 col-sm-4">
         <%= link_to cocktail_path(cocktail) do %>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/600x400/?cocktail/<%= count %>');">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(
+              <% if cocktail.photo.blank? %>
+                'https://source.unsplash.com/600x400/?cocktail/<%= count %>'
+              <% else %>
+                <%= cl_image_path cocktail.photo, height: 500, width: 500, crop: :fill, class: "show-image" %>
+              <% end %>
+          );">
             <div class="card-description">
               <%= cocktail.name %>
             </div>

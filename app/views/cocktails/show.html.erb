@@ -23,14 +23,14 @@
           <%= render 'doses/form', cocktail: @cocktail, dose: @dose %>
         </div>
 
-    <!--     <%= link_to new_cocktail_dose_path(@cocktail) do %>
-          <i id="add-form" class="fas fa-plus"></i>
-        <% end %> -->
-
       </div>
     </div>
     <div class="col-xs-6">
-      <%= image_tag "https://source.unsplash.com/500x500/?alcohol", alt: "cocktail", class: "show-image" %>
+      <% if @cocktail.photo.blank? %>
+        <%= image_tag "https://source.unsplash.com/500x500/?alcohol", alt: "cocktail", class: "show-image" %>
+      <% else %>
+        <%= cl_image_tag @cocktail.photo, height: 500, width: 500, crop: :fill, class: "show-image" %>
+      <% end %>
     </div>
     <%= link_to cocktails_path do %>
       <i class="far fa-arrow-alt-circle-left page-bottom"></i>
