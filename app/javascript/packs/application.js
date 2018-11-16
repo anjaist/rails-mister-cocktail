@@ -8,3 +8,11 @@
 // layout file, like app/views/layouts/application.html.erb
 import 'bootstrap';
 console.log('Hello World from Webpacker')
+
+const newFormButton = document.getElementById("add-form");
+const newDose = document.getElementById("new-dose");
+
+newFormButton.addEventListener("click", (event) => {
+  console.log(event)
+  newDose.style.display = "block";
+});

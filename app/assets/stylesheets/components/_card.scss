@@ -1,14 +1,17 @@
 .card {
   height: 175px;
+  margin: 0 20px 30px 20px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
   color: white;
   position: relative;
+  border-radius: 20px;
   border-left: 3px double $yellow;
-  margin-bottom: 30px;
+  transition: ease all 0.5s;
   &:hover {
-    box-shadow: 1px 1px 40px rgba(255, 255, 255, 0.1);
+    box-shadow: 1px 1px 40px rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
   }
 }
 
